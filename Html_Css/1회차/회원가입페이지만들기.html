@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta chatset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>회원가입 페이지</title>
+    </head>
+    <body>
+        <header>
+            <h1>회원가입</h1>
+        </header>
+        <main>
+            <h3>OZ코딩스쿨에 오신 것을 환영합니다! 🤩</h3>
+            <img src="/Html_Css/1회차/images/ozpost.png" alt="초격차">
+
+            <form action="none.com" method="post">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" required> <br/>
+                
+                <input type="radio" id="woman" name="gender" value="woman" required>
+                <label for="woman">여자</label>
+                <input type="radio" id="man" name="gender" value="man" >
+                <label for="man">남자</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">해당없음</label><br/>
+
+                <label for="birth">생일</label>
+                <input type="date" id="birth" name="birth"><br/>
+
+                <label for="phone">휴대폰번호</label>
+                <input type="phone" id="phone" name="phone"><br/>
+
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" placeholder="이메일" required><br/>
+
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" placeholder="비밀번호" required><br/>
+
+                <label>자기소개</label><br/>
+                <textarea></textarea>
+                <hr/>
+                <span>아래 약관에 동의를 눌러주세요.</span>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="agree1">
+                        <label for="agree1">남과 비교하지 않기</label><br/>
+                        <span>
+                            남과 나를 비교하지 않고 <strong>어제의 나</strong>와 <strong>오늘의 나</strong>를 비교하여 얼마나 성장했는지 가늠해요.
+                        </span>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="agree2">
+                        <label for="agree2">시간을 투자하기</label><br/>
+                        <span>
+                            시간을 투자하고 노력할수록 <strong>완성도 있고 성취감 있는 결과를 만들어낼 수 있어요.</strong>
+                        </span>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="agree3">
+                        <label for="agree3">함께할 동료를 만들기</label><br/>
+                        <span>
+                            서로서로 가르쳐주고 배우기도 하며 함께할 동료를 만들어보세요.<br/>
+                            <strong>함께 성장할수록 마지막 프로젝트의 완성도 또한 높아진답니다.</strong>
+                        </span>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="agree4">
+                        <label for="agree4">자원을 적극 활용하기</label><br/>
+                        <span>
+                            저희 운영진은 여러분을 위해 상시 대기중...! 
+                            <strong>모르는게 있으면 꼭! 물어봐주세요.😍</strong>
+                        </span>
+                    </li>
+                </ul>
+                <hr/>
+                <button type="submit">회원가입하기</button>
+            </form>
+        </main>
+        <footer>
+            <a href="https://ozcodingschool.com/ozcoding/startupcamp?utm_source=google&utm_medium=sa&utm_campaign=18728533673&utm_content=144009567578&utm_term=%EC%98%A4%EC%A6%88%EC%BD%94%EB%94%A9%EC%8A%A4%EC%BF%A8&gad_source=1&gclid=CjwKCAjw8rW2BhAgEiwAoRO5rPJaJEzY6d3vHb0vBHGNXdi8GiIleQGD7lgIqsg8mq6MqfWUZEpIthoC_mcQAvD_BwE">
+                오즈코딩스쿨 홈페이지 구경하기 ></a>
+        </footer>        
+    </body>
+</html>

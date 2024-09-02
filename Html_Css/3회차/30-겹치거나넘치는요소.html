@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        .div1{
+            background-color: orange; 
+            z-index: 4;
+            overflow: scroll;
+        }
+        .div2{
+            background-color: red;
+            z-index: 3;
+            bottom: 50px
+        }
+        .div3{
+            background-color: purple;
+            z-index: 2;
+            bottom: 100px
+        }
+        .div4{
+            background-color: green; 
+            z-index: 1;
+            bottom: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div1">
+        orangeorangeorangeorangeorange
+        orangeorangeorangeorangeorange
+        orangeorangeorangeorangeorange
+        orangeorangeorangeorangeorange
+        orangeorangeorangeorangeorange
+        orangeorangeorangeorangeorange
+        orangeorangeorangeorangeorange
+        orangeorangeorangeorangeorange
+    </div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+
+</body>
+</html>

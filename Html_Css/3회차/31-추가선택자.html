@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 더 알아보기</title>
+    <style>
+        /*
+            기호와 함께 사용하는 속성 선택자
+            * : 값의 포함 여부
+            ^ : 값의 시작 여부
+            & : 값의 끝 여부
+        */
+        [width ^= "1"]{
+            border: 5px dashed red;
+        }
+
+        P > em{
+            color: pink;
+        }
+
+        #sam + p{
+            color:salmon;
+        }
+    </style>
+</head>
+<body>
+    <img src="omg.jpg" width="120" alt="피글렛">
+    <img src="omg.jpg" width="120">
+    <img src="omg.jpg" width="120" id="sam" >
+    <p>대구는 권여진의 고향이자, 현 거주지이기도 합니다.</p>
+    <p>대구광역시 <em>용산동</em>은 없는거 빼고 다 있습니다</p>
+    <p>교통도 좋고 살기 좋은 곳입니다</p>
+    <p>용산동을 떠나고 싶지 않아요 그치만 두류도 좋습니다</p>
+</body>
+</html>

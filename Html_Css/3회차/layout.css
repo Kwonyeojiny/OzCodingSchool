@@ -1,0 +1,158 @@
+/* 기본 스타일 리셋 */
+*{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* 헤더 스타일링 */
+header{
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+
+#in_header{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f1da;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 100px;
+}
+
+#logo{
+    width: 200px;
+    height: 100px;
+    background-color: #ff8364;
+    float: left;
+}
+
+#gnd{
+    width: calc(100% - 200px);
+    height: 100%;
+    background-color: #ffd98e;
+    float: right;
+}
+
+#gnd > li {
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+/* 섹션1 스타일링 */
+#section1{
+    background-color: papayawhip;
+    width: 100%;
+    height: 400px;
+    float: left;
+}
+
+/* 섹션2 스타일링 */
+#section2{
+    width: 100%;
+    background-color: #b9e1dc; 
+    float: left;
+    padding: 50px 0;
+
+}
+
+.container{
+    width: 1240px;
+    height: 100%;
+    background-color: #f4cb81;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.circle{
+    width: 380px;
+    height: 389px;
+    border: 1px solid black;
+    border-radius: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-right: 50px;
+}
+.circle:last-child{
+    margin-right: 0;
+}
+
+/* 섹션3 스타일링 */
+#section3{
+    width: 100%;
+    height: 1650px;
+    background-color: aliceblue;
+    float: left;
+    padding-bottom: 50px;
+    margin: 0 auto;
+}
+
+.wrap{
+    height: 1650px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.con_wrap{
+    width: 400px;
+    height: 100%;
+    background-color: #9fcb64;
+    float: left;
+    margin-right:20px;
+}
+.con_wrap:last-child{
+    margin-right: 0;
+}
+.con_wrap > li{
+    width: 100%;
+    height: 500px;
+    background-color: #f8eeb4;
+}
+
+
+.con_wrap > .long_box{
+    width: 400px;
+    background-color: #f8eeb4;              
+}
+
+.m_box{
+    margin: 50px 0;
+}
+
+/* 상단버튼 스타일링 */
+#top_btn{
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    background-color: #fdac61;
+    text-align: center;
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+    border: none;
+    border-radius: 5px;
+    padding-top: 15px;
+}
+#top_btn:hover{
+    background-color: #f29742;
+}
+#top_btn:active{
+    background-color: #d97a21;
+}
+#top_btn a{
+    color: white;
+}
