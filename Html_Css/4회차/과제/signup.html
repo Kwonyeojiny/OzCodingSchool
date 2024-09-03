@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link href="signup.css" rel="stylesheet">
+    <link href="chatroom.css" rel="stylesheet">
+</head>
+<body>
+    <!--문의 파트-->
+    <div class="chat-btn-container">
+        <div class="chat-btn">
+          <input id="chat-toggle" type="checkbox"/>
+          <span>✉️</span>
+          <div class="chat" id="chat">
+            <header class="chat-title">
+              <a class="chat-title-back-btn">&lt;</a>
+              <div class="chat-title-profile">
+                <img
+                  src="oz.png"
+                  class="chat-title-profile-img"
+                />
+                <span class="chat-title-profile-name">
+                  <h1>오즈코딩스쿨</h1>
+                  <p>Back on 11:00 AM</p>
+                </span>
+              </div>
+            </header>
+            <main class="chat-main">
+              <span class="chat-main-header">
+                <p>🔊</p>
+                <p>문의해 주시는 교육 과정명을 꼭 알려주세요:&#41;</p>
+              </span>
+              <div class="chat-main-profile">
+                <img
+                  src="oz.png"
+                  class="chat-main-profile-img"
+                />
+                <span class="chat-main-profile-text">
+                  <h2>Contact 오즈코딩스쿨</h2>
+                  <a>See business hours ></a>
+                </span>
+              </div>
+              <p class="chat-main-time">September 2 10:10 PM</p>
+              <div class="chat-bubble-container">
+                <div class="chat-bubble">
+                  <img
+                    src="oz.png"
+                    class="chat-bubble-profile-img"
+                  />
+                  <span class="chat-bubble-content">
+                    <p>오즈코딩스쿨</p>
+                    <span>
+                      안녕하세요!<br />
+                      궁금한 게 있으면 편하게 물어봐 주세요👀<br />
+                      문의해 주시는 <strong>교육 과정명</strong>을 꼭
+                      알려주세요:&#41;
+                    </span>
+                    <p>10: 00 PM</p>
+                  </span>
+                </div>
+              </div>
+              <div class="chat-bubble-user-container">
+                <span class="chat-bubble-user-content">
+                  <span>
+                    안녕하세요 :&#41;<br />프론트엔드 과정 문의하러 왔어요!
+                  </span>
+                  <p>10: 01 PM</p>
+                </span>
+              </div>
+            </main>
+            <form class="chat-form">
+              <input type="text" class="chat-form_text" />
+              <input type="submit" value=">" class="chat-form_bt" >
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <!--회원가입 파트-->
+    <div class="sign_up">
+        <div class="sign_up_logo">
+            <img src="oz.png" href="오즈코딩스쿨">
+        </div>
+        <div class="sign_up_box">
+            <header class="sign_up_title">
+                <h1>회원가입</h1>
+                <h3>OZ코딩스쿨에 오신 것을 환영합니다! 🤩</h3>
+            </header>
+            
+            <form class="sign_up_form">
+                <div class="sign_up_input">
+                    <input tyep="text" id="name" name="name" placeholder="이름" required><br>
+                    <input type="phone" id="phone" name="phone" placeholder="전화번호" required><br/>
+                    <input type="email" id="email" name="email" placeholder="이메일" required><br/>
+                    <input type="password" id="password" name="password" placeholder="비밀번호" required><br/>
+                    <input type="date" id="birth" name="birth" required><br/>
+
+                    <div class="sign_up_gender">
+                        <div>
+                            <input type="radio" id="woman" name="gender" value="woman" required>
+                            <label for="woman">여자</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="man" name="gender" value="man" >
+                            <label for="man">남자</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="other" name="gender" value="other">
+                            <label for="other">해당없음</label><br/>
+                        </div>
+                    </div>                                                      
+                </div>
+
+                <div class="sign_up_agree">
+                    <span>아래 약관에 동의를 눌러주세요.</span>
+                    <ul>
+                        <li>
+                            <input type="checkbox" id="agree1">
+                            <label for="agree1"><span>[필수]</span>
+                                남과 비교하지 않기: 남과 나를 비교하지 않고 어제의 나와 오늘의 나를 비교하여 얼마나 성장했는지 가늠해요.
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="agree2">
+                            <label for="agree2"><span>[필수]</span>
+                                시간을 투자하기: 시간을 투자하고 노력할수록 완성도 있고 성취감 있는 결과를 만들어낼 수 있어요.
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="agree3">
+                            <label for="agree3"><span>[필수]</span>
+                                함께할 동료를 만들기: 서로서로 가르쳐주고 배우기도 하며 함께할 동료를 만들어보세요.
+                                함께 성장할수록 마지막 프로젝트의 완성도 또한 높아진답니다.
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="agree4">
+                            <label for="agree4"><span>[필수]</span>
+                                자원을 적극 활용하기: 저희 운영진은 여러분을 위해 상시 대기중...! 
+                                모르는게 있으면 꼭! 물어봐주세요.😍
+                            </label> 
+                        </li>
+                    </ul>
+                </div>
+                
+                <button type="submit">회원가입하기</button><br>
+                <a href="https://ozcodingschool.com/ozcoding/startupcamp?utm_source=google&utm_medium=sa&utm_campaign=18728533673&utm_content=144009567578&utm_term=%EC%98%A4%EC%A6%88%EC%BD%94%EB%94%A9%EC%8A%A4%EC%BF%A8&gad_source=1&gclid=CjwKCAjw8rW2BhAgEiwAoRO5rPJaJEzY6d3vHb0vBHGNXdi8GiIleQGD7lgIqsg8mq6MqfWUZEpIthoC_mcQAvD_BwE">
+                    오즈코딩스쿨 홈페이지 구경하기 ></a>
+            </form>
+        </div>        
+    </div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+
+
+html{
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+}
+
+/* 채팅 박스 */
+.chat-container{
+    width: 400px;
+    height: 700px;
+    position: absolute;
+    background-color: white;
+}
+
+/* 채팅 박스 헤더 */
+.chat-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 18px 0;
+
+    background-color:aliceblue
+}
+
+.chat-title_back_btn{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    font-size: 20px;
+}
+
+.chat-title_profile{
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.chat-title_profile > img{
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+.chat-title_profile_name h1{
+    margin: 0;
+}
+
+.chat-title_profile_name p{
+    color: rgb(170, 170, 170);
+    font-weight: 700;
+    font-size: 13px;
+    margin: 1px;
+}
+
+/* 채팅 박스 메인 */
+.chat-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    overflow: scroll;
+}
+
+.chat-main_head{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    font-size: 13px;
+    background-color: rgb(227, 227, 227);
+    color: gray;
+    border-radius: 10px;
+}
+
+.chat-main_profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 30px 24px 15px 24px;
+}
+
+.chat-main_profile > img {
+    width: 70px;
+    height: 70px;
+    border-radius: 40%;
+}
+
+.chat-main_profile_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+
+.chat-main_profile_text > h2{
+    margin: 5px;
+}
+
+.chat-main_profile_text > a{
+    font-size: 15px;
+    font-weight: 100;
+    color: gray;
+}
+
+.chat-main_time{
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.chat-bubble_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.chat-bubble_profile{
+    width: 30px;
+  height: 30px;
+  margin-bottom: 20px;
+  border-radius: 40%;
+}
+
+.chat-bubble{
+    display: flex;
+    align-items: end;
+    gap: 10px;
+}
+
+.chat-bubble_chat{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: gray;
+    font-size: 12px;
+}
+
+.chat-bubble_chat > p {
+    margin-left: 12px;
+  }
+  
+  .chat-bubble_chat > span {
+    display: block;
+    padding: 12px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 15px;
+    border-bottom-left-radius: 5px;
+    font-size: 15px;
+    color: black;
+    line-height: 140%;
+  }
+
+.chat-bubble_user_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.chat-bubble_user_chat{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    color: gray;
+    font-size: 12px;
+}
+  
+
+.chat-bubble_user_chat > span {
+    display: block;
+    padding: 12px;
+    background-color: rgb(76, 76, 76);
+    border-radius: 15px;
+    border-bottom-right-radius: 5px;
+    font-size: 15px;
+    color: white;
+    line-height: 140%;
+  }
+  
+  .chat-bubble_user_chat > p {
+    margin-right: 12px;
+  }
+
+/* 채팅 전송 */
+.chat-form{
+    background-color: white;
+}
+
+.chat-form > .chat-form_msg{
+    box-sizing: border-box;
+    width: 380px;
+    padding: 20px 60px 20px 20px;
+    margin: 10px;
+    background-color: rgb(236, 236, 236);
+    border: none;
+    border-radius: 50px;
+}
+
+.chat-form > .chat-form_bt{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: none;
+    background-color: rgb(192, 192, 192);
+    color: white;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}

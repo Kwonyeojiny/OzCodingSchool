@@ -14,13 +14,17 @@ body{
 
 .container{
     height: 100%;
-    background-color:#f5f1da ;
+    background-color:#c3d0ae ;
+}
+
+.chat-screen_bar{
+    float: top;
 }
 
 /* 스크린 크기 조정 */
 .chat-screen{
     /* 전체에서 채팅입력창만큼 제외 calc() */
-    height: calc(100% - 120px);
+    height: calc(100% - 200px);
 }
 
 /* 유저 정보 표시 */

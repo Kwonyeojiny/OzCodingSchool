@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채팅방 만들기</title>
+    <link href="chatroom.css" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-room_btn">
+        <input type="checkbox"/>
+
+        <!--채팅 박스-->
+        <div class="chat-container">  
+
+            <!--채팅 박스 헤더-->   
+            <header class="chat-title">
+                <a class="chat-title_back_btn" href="#">&lt;</a>
+                <div class="chat-title_profile">
+                    <img src="oz.png">
+                    <span class="chat-title_profile_name">
+                        <h1>오즈코딩스쿨</h1>
+                        <p>Back on 11:00 AM</p>
+                    </span>
+                </div>
+            </header>
+
+            <!--채팅 박스 메인-->
+            <main class="chat-main">
+                <span class="chat-main_head">
+                    <p>🔊 문의해 주시는 교육 과정명을 꼭 알려주세요:&#41;</p>
+                </span>
+
+                <span class="chat-main_profile">
+                    <img src="oz.png" class="chat-main_profile_img">
+                    <span class="chat-main_profile_text">
+                        <h2>Contact 오즈코딩스쿨</h2>
+                        <a>See business hours  &gt;</a>
+                    </span>
+                </span>
+
+                <p class="chat-main_time">September 3 10:10 PM</p>
+
+                <div class="chat-bubble_container">
+                    <div class="chat_bubble">
+                        <img src="oz.png" class="chat-bubble_profile">
+                        <span class="chat-bubble_chat">
+                            <p>오즈코딩스쿨</p>
+                            <span>
+                                안녕하세요!<br>
+                                궁금한 게 있으면 편하게 물어봐 주세요<br>
+                                문의해 주시는 <strong>교육 과정명</strong>을 꼭 알려주세요:&#41;
+                            </span>
+                            <p>10:00 PM</p>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="chat-bubble_user_container">
+                    <span class="chat-bubble_user_chat">
+                        <span>
+                            안녕하세요 :&#41;<br>
+                            프론트엔드 과정 문의하러 왔어요!
+                        </span>
+                        <p>10:01 PM</p>
+                    </span>
+                </div>
+            </main>
+
+            <!--채팅 전송 폼-->
+            <form class="chat-form">
+                <input type="text" class="chat-form_msg">
+                <input type="submit" value=">" class="chat-form_bt" >
+            </form>
+        </div>
+    </div>
+</body>
+</html>
