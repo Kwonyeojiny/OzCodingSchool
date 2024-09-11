@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        for(let i=0;i<5;i++){
+            const div = document.getElementById("container")
+
+            const box = document.createElement("div")
+            //console.log(box)
+            box.style.color = "blue"
+            box.style.width = "200px"
+            box.style.height = "200px"
+            box.textContent = "헷갈리지만 신기하고 재밌다"
+
+            div.appendChild(box)
+            //console.log(div.appendChild(box)) // <div style="">내용</div> 콘솔 출력
+
+            //div.append("텍스트 출력가능") // append안에 택스트 입력 및 출력 가능
+            //console.log(div.append(box)) // undefined 추가는 하지만 반환은 안함
+        }
+        
+
+
+    </script>
+</body>
+</html>
