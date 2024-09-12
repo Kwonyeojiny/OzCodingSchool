@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        createParagraph()
+        createParagraph()
+        createParagraph()
+        createParagraph()
+        createParagraph()
+
+        function createParagraph(){
+            const p = document.createElement('p')
+            p.textContent = "새롭게 만들어진 문단 테그!"
+            document.querySelector("#container").append(p)
+        }
+
+
+
+        // 함수 이름짓기 규칙은 변수와 같음
+        // 기능을 정의하는 만큼, 동사를 사용하는 것이 좋음
+
+        // 선언식 - 호이스팅이 가능
+        // 호이스팅 - 함수 만드는 부분이 호출하는 부분보다 아래에 있어도 된다.
+        function sayYes() {
+            console.log(1)
+            console.log(2)
+            alert('yes!');
+        }
+       //sayYes()
+       
+       // 표현식 - 호이스팅 불가
+       const sayNo = function(){
+        alert('No')
+        console.log(3)
+       }
+
+       // 호이스팅 - 일어나지 않는게 좋음 -> 의도하지 않은 결과
+
+       // 함수를 이해하기 위한 꿀팁
+       // JavaScipt 함수는 '일급객체'다
+       // JavaScript 함수는 무엇이든 될 수 있다
+
+       function add (a, func){
+        return a + func;
+       }
+       function func(b,c){
+        return b+c
+       }
+       console.log(add(5,func(3,4)))
+
+       function gugu (a){
+        let i = 1;
+        // while(i<10) {
+        //     console.log(a*i)
+        //     i++;
+        // }
+            if(a>9) console.log("9단까지만 출력가능합니다")
+            else if (a<=0) console.log("0이상 출력가능합니다")
+            else{
+                for(let i =1; i<10;i++) console.log(a*i)
+            }
+        return "구구단!"
+        }
+        
+        console.log(gugu(7))
+    </script>
+</body>
+</html>
