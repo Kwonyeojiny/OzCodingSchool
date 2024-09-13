@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="talk">
+    <input type="button" id="push" value="push"><br><br><br>
+
+
+    <form id="form">
+        <input id="name">
+        <input id="nick">
+        <input type="submit">
+    </form>
+    <script>
+
+        const form = document.getElementById("form")
+        form.addEventListener('submit', function(event){
+            event.preventDefault() // 제출이 발생했을때 새로고침 안해!
+
+            const p = document.createElement("p")
+            p.textContent = `${event.target.name.value}의 별명은
+            ${event.target.nick.value}`
+            document.body.append(p)
+            
+        })
+
+
+
+
+        // const input = document.getElementById('talk')
+        // const button = document.getElementById('push')
+
+        // input.addEventListener('keyup',function(e){
+        //     console.log(e.target.value)
+        // })
+
+        // button.addEventListener('click', function(){
+        //     // alert(input.value)
+        //     // input.value = "버튼 눌러서 씀"
+
+        //     const p = document.createElement('p')
+        //     p.textContent = input.value
+        //     document.body.append(p)
+        // })
+    </script>
+</body>
+</html>
