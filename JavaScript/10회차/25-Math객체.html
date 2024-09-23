@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 객체</title>
+</head>
+<body>
+    <button id="draw">추첨</button>
+    <p id="number"></p>
+
+    <script>
+        const button = document.getElementById("draw")
+        const p = document.getElementById("number")
+
+        console.log(Math.sqrt(4)) // 제곱근
+        console.log(Math.abs(-5)) // 절댓값
+        
+        // 0 ~ 1 사이 랜덤 숫자 반환
+        let rd = Math.random()
+        console.log(rd)
+        console.log(rd * 10) // 0 ~ 10 사이의 수
+
+        console.log(Math.floor(rd * 10) + 1) // Math.floor - 소숫점 아래자리 삭제
+
+        const MAX_NUM = 10
+        const MIN_NUM = 1
+        //console.log(Math.floor(rd * MAX_NUM) + MIN_NUM)
+        button.addEventListener("click",function(){
+            p.textContent = Math.floor(Math.random()*MAX_NUM + MIN_NUM)
+        })
+
+    </script>
+</body>
+</html>
