@@ -18,31 +18,6 @@ h1{
 	margin-bottom: 2rem;
 }
 
-.calculator-container{
-	width: 28rem;
-	height: 40rem;
-	border: 0.1rem solid green;
-	border-radius: 25px;
-	display: flex;
-	flex-direction: column;
-}
-
-.display{
-	border:0.1rem solid red;
-	color: red;
-	margin: 0.5rem 1.6rem;
-	padding: 1rem;
-	height: 15%;
-}
-
-.buttons{
-	border:0.1rem solid blue;
-	color: blue;
-	margin: 0.5rem 1.6rem 1.6rem;
-	padding: 1rem;
-	flex-grow: 1;
-}
-
 .menu{
 	height: 2.5rem;
 	display: flex;
@@ -68,4 +43,38 @@ h1{
 
 .green{
 	background-color: rgb(57, 171, 57);
+}
+
+.calculator-container{
+	width: 28rem;
+	height: 40rem;
+	border: 0.1rem solid green;
+	border-radius: 25px;
+	display: flex;
+	flex-direction: column;
+}
+
+.display{
+	border:0.1rem solid red;
+	margin: 0.5rem 1.6rem;
+	padding: 1rem;
+	height: 15%;
+
+	font-size: 2.8rem;
+	text-align: right;
+}
+
+.buttons{
+	border:0.1rem solid blue;
+	margin: 0.5rem 1.6rem 1.6rem;
+	/* padding: 1rem; */
+	flex-grow: 1;
+
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-rows: repeat(5,1fr);
+}
+
+.zero{
+	grid-column: 1 / span 2;
 }

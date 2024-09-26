@@ -1,4 +1,4 @@
-/* * {
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -6,8 +6,38 @@
 
 html, body {
 height: 100%;
-} */
+}
 
+#container{
+	max-width: 24rem;
+	margin: auto;
+	margin-top: 3rem;
+	border: 0.1rem solid gray;
+	padding: 1rem 2rem;
+}
+h1{
+	text-align: center;
+}
 .done{
-    color:green;
+    color:rgb(1, 143, 1);
+	text-decoration: line-through;
+}
+
+#todo-list{
+	margin: 2rem;
+}
+
+#todo-form{
+	display: flex;
+	justify-content: center;
+}
+
+input{
+	height: 2rem;
+	padding: 0 1rem ;
+	margin: 0 0.3rem;
+}
+
+li{
+	margin-bottom: 0.5rem;
 }
