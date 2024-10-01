@@ -9,6 +9,7 @@ let firstOperand = '' // 첫 번째 피연산자 저장변수
 let secondOperand = ''
 let operator = '' // 연산자 저장 변수
 let operatorClicked = false // 연산자 클릭 여부
+let result = '' // 연속적 계산처리를 위한 전역변수 선언
 
 buttons.forEach((btn) => {
     btn.addEventListener('click',(e)=>{
@@ -25,16 +26,9 @@ buttons.forEach((btn) => {
         
         // 4-1단계 2번 3번
         if(e.target.classList.contains('operator')) {checkOperator(action)} 
-
+        
         // 4-2단계 '=' 계산 수행
-        if (action === '=') { 
-            secondOperand = currentInput // secondOperand를 currentInput 값으로 설정
-            currentInput = calculate(firstOperand, operator, secondOperand)
-            firstOperand = ''
-            secondOperand = ''
-            operator = ''
-            operatorClicked = false
-        }
+        checkEqual(action)
 
         changePlMi(action)
         changePercentage(action)
@@ -44,11 +38,11 @@ buttons.forEach((btn) => {
 })
 
 const addDisplayNum = ((action) => {
-    if(currentInput === '0' || operatorClicked) {
+    if(currentInput === '0' || operatorClicked || result !== '') {
         currentInput = action
         operatorClicked = false
-    }
-    else {currentInput += action}
+        result = ''
+    } else {currentInput += action}
 })
 
 const clearAll = ((action) => {
@@ -58,6 +52,7 @@ const clearAll = ((action) => {
         secondOperand = ''
         operator = ''
         operatorClicked = false
+        result = ''
     }
 })
 
@@ -68,15 +63,42 @@ const addNumPoint = ((action) => {
 })
 
 const checkOperator = ((action) => {
-    firstOperand = currentInput
+    // 4단계 추가과제 (= 누르지 않아도 부등호 누르면 계산되는 조건)
+    if(result !== ''){
+        firstOperand = result
+        result = ''
+    } else if(operator && firstOperand && !operatorClicked){
+        secondOperand = currentInput;
+        currentInput = calculate(firstOperand, operator, secondOperand);
+        firstOperand = currentInput;
+    }
+    else {firstOperand = currentInput}
+
     operator = action
     operatorClicked = true
-    console.log('firstOperand: ' + firstOperand, ' operator: ',operator)
+
+    //console.log('firstOperand: ' + firstOperand, ' operator: ',operator)
+})
+
+const checkEqual = ((action) => {
+    if (action === '=') { 
+        // @@ 값이 나온상태 이거나 아무것도 없는 상태에서 =을 누르면 화면이 빈값이 된다 조건 추가
+        if(operator === '' || !firstOperand){return}
+        else {
+            secondOperand = currentInput
+            currentInput = calculate(firstOperand, operator, secondOperand)
+            result = currentInput
+            firstOperand = currentInput
+            secondOperand = ''
+            operator = ''
+            operatorClicked = true
+        }      
+    }
 })
 
 const calculate = ((firstOperand, operator, secondOperand) => {
 
-    let result = 0
+    parseFloat(result)
     
     switch(operator){
         case '+':

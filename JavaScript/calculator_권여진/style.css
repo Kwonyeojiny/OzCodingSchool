@@ -108,12 +108,14 @@ h1{
 }
 
 .button:hover{
-	background-color: rgb(182, 210, 200);
+	/* background-color: rgb(182, 210, 200); */
+	filter: invert(15%);
 	border: 0.1rem solid rgb(173, 173, 173);
 }
 
 .button:active{
-	background-color: rgb(127, 155, 145);
+	/* background-color: rgb(127, 155, 145); */
+	filter: invert(25%);
 }
 
 .zero{
