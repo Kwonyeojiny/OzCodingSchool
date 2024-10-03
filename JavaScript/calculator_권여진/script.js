@@ -34,6 +34,8 @@ buttons.forEach((btn) => {
         changePercentage(action)
 
         display.textContent = currentInput
+
+        // if(currentInput.length > 19)
     })
 })
 
@@ -69,7 +71,7 @@ const checkOperator = ((action) => {
         result = ''
     } else if(operator && firstOperand && !operatorClicked){
         secondOperand = currentInput;
-        currentInput = calculate(firstOperand, operator, secondOperand);
+        currentInput = calculate(firstOperand, secondOperand, operator);
         firstOperand = currentInput;
     }
     else {firstOperand = currentInput}
@@ -86,7 +88,7 @@ const checkEqual = ((action) => {
         if(operator === '' || !firstOperand){return}
         else {
             secondOperand = currentInput
-            currentInput = calculate(firstOperand, operator, secondOperand)
+            currentInput = calculate(firstOperand, secondOperand, operator)
             result = currentInput
             firstOperand = currentInput
             secondOperand = ''
@@ -96,7 +98,7 @@ const checkEqual = ((action) => {
     }
 })
 
-const calculate = ((firstOperand, operator, secondOperand) => {
+const calculate = ((firstOperand, secondOperand, operator) => {
 
     parseFloat(result)
     
@@ -111,7 +113,7 @@ const calculate = ((firstOperand, operator, secondOperand) => {
             result = parseFloat(firstOperand) * parseFloat(secondOperand)
             break
         case '/':
-            if(secondOperand === '0') {result = 'ERROR😳'}
+            if(secondOperand === '0') {result = 'ERROR'}
             else {result = parseFloat(firstOperand) / parseFloat(secondOperand)}
             break
         default:
@@ -124,7 +126,7 @@ const calculate = ((firstOperand, operator, secondOperand) => {
 })
 
 const changePlMi = (action) => {
-    if(action === '±' && currentInput !== '0'){
+    if(action === '+/-' && currentInput !== '0'){
         currentInput *= -1
     }
 }

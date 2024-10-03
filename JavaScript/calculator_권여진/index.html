@@ -5,49 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/w95fa" rel="stylesheet">
 </head>
 <body>
-    <h1>권여진이의 계산기</h1>
     <div class="calculator-container">
-        <div class="menu">
-            <div class="circle red"></div>
-            <div class="circle yellow"></div>
-            <div class="circle green"></div>
+        <div class="menu flex">
+            <img class="cal_img" src="img/Calculator.png">
+            <div class="menu_font">Calculator</div>
+            <div class="menu_btns">
+                <button class="menu_btn"><img src="img/underbar.png"></button>
+                <button class="menu_btn"><img src="img/meno.png"></button>
+                <button class="menu_btn"><img src="img/x.png"></button>
+            </div>
+        </div>
+        <div class="menu_menus flex">
+            <button class="menu_menu"><span>E</span>dit</button>
+            <button class="menu_menu"><span>V</span>iew</button>
+            <button class="menu_menu"><span>H</span>elp</button>
         </div>
         
-        <div class="display"></div>
-        <div class="buttons">
-            <button class="button function">C</button>
-            <button class="button function">±</button>
-            <button class="button function">%</button>
+        <div class="main_cal">
+            <div class="display"></div>
+            <div class="buttons">
+                <button class="button function clear">C</button>
+                <button class="button function">+/-</button>
+                <button class="button function">%</button>
 
-            <button class="button operator">/</button>
+                <button class="button operator">/</button>
 
-            <button class="button number">7</button>
-            <button class="button number">8</button>
-            <button class="button number">9</button>
+                <button class="button number">7</button>
+                <button class="button number">8</button>
+                <button class="button number">9</button>
 
-            <button class="button operator">*</button>
+                <button class="button operator">*</button>
 
-            <button class="button number">4</button>
-            <button class="button number">5</button>
-            <button class="button number">6</button>
+                <button class="button number">4</button>
+                <button class="button number">5</button>
+                <button class="button number">6</button>
 
-            <button class="button operator">-</button>
+                <button class="button operator">-</button>
 
-            <button class="button number">1</button>
-            <button class="button number">2</button>
-            <button class="button number">3</button>
+                <button class="button number">1</button>
+                <button class="button number">2</button>
+                <button class="button number">3</button>
 
-            <button class="button operator">+</button>
+                <button class="button operator">+</button>
 
-            <button class="button number zero">0</button>
-            <button class="button number">.</button>
-            <button class="button">=</button>
+                <button class="button number zero">0</button>
+                <button class="button number">.</button>
+                <button class="button equal">=</button>
+            </div>
         </div>
     </div>
+    <footer class="footer_menu flex">
+        <button class="under_menu">
+            <div class="menu_content flex">
+                <img src="img/Windows_logo.png">
+                <span class="menu_text">Start</span>
+            </div>        
+        </button>
+        <div class="footer_items">
 
-    <script src="style.js"></script>
-    <script src="movecal.js"></script>
+        </div>
+        <div class="footer_time flex">
+            <img src="img/Volume.png">
+            <span class="footer_time_text"></span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="window95.js"></script>
 </body>
 </html>
