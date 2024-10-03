@@ -3,15 +3,31 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'W95FA', sans-serif;
-                                                
+	font-family: 'W95FA', sans-serif;   
+	
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none
 }
 
 /* HTML과 Body의 기본 설정 */
 html, body {
-	height: 100%;
-	margin: 16px;
+	height: calc(100%-66px);
 	background-color: rgb(17, 129, 129);
+}
+
+/* Img 선택 및 드래그 금지 */
+img {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
 }
 
 /* flex */
@@ -202,16 +218,16 @@ html, body {
 .icon{
 	width: 72px;
 
+	position: absolute; /* 아이콘을 자유롭게 이동 가능하도록 설정 */
+    top: 16px; /* 초기 위치 (y축) */
+    left: 32px; /* 초기 위치 (x축) */
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
 	cursor: pointer;
-}
-
-.icon_img{
-	
 }
 
 .icon_text{
@@ -285,7 +301,10 @@ html, body {
 
 .footer_time_text{
 	margin: auto 0;
+	margin-right: 4px;
 	font-size: 1.3rem;
+	flex-grow: 1;
+	text-align: right;
 }
 
 .footer_items {

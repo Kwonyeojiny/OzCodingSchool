@@ -1,8 +1,49 @@
+const icon = document.querySelector('.icon');
+
+let offsetX, offsetY;
+
+icon.addEventListener('mousedown', (e) => {
+    icon.style.cursor = 'grabbing';
+
+    // 마우스 클릭 시 현재 위치와 클릭 위치의 차이를 계산
+    offsetX = e.clientX - icon.getBoundingClientRect().left;
+    offsetY = e.clientY - icon.getBoundingClientRect().top;
+
+    // 마우스 이동 이벤트 추가
+    document.addEventListener('mousemove', moveIcon);
+
+    // 마우스 버튼을 떼면 이벤트 제거
+    document.addEventListener('mouseup', () => {
+        icon.style.cursor = 'grab';
+        document.removeEventListener('mousemove', moveIcon);
+    }, { once: true });
+});
+
+const moveIcon = (e) => {
+    // 화면의 크기 경계 계산
+    const minX = 32;
+    const minY = 16;
+    const maxX = window.innerWidth - icon.offsetWidth - 32; // 계산기가 넘어가지 않도록 제한
+    const maxY = window.innerHeight - icon.offsetHeight - 66 - 16; // 계산기가 화면 아래로 넘어가지 않도록 제한
+
+    // 계산기의 새로운 위치 계산
+    let newLeft = e.clientX - offsetX;
+    let newTop = e.clientY - offsetY;
+
+    // 화면의 경계를 넘지 않도록 좌우 상하 제한 설정
+    if (newLeft < minX) newLeft = minX;
+    if (newTop < minY) newTop = minY;
+    if (newLeft > maxX) newLeft = maxX;
+    if (newTop > maxY) newTop = maxY;
+
+    // 계산기의 위치 업데이트
+    icon.style.left = `${newLeft}px`;
+    icon.style.top = `${newTop}px`;
+};
+
 // 계산기 화면내에서 움직이게 만들기
 const movedcal = document.querySelector('.calculator-container');
 const movedcalTop = document.querySelector('.menu'); // 메뉴부분 잡았을 때만 계산기 움직이게
-
-let offsetX, offsetY;
 
 movedcalTop.addEventListener('mousedown', (e) => {
     movedcalTop.style.cursor = 'grabbing';
@@ -43,10 +84,7 @@ const moveCalculator = (e) => {
     movedcal.style.top = `${newTop}px`;
 };
 
-
-
 // footer 메뉴바
-
 // 시간 표현
 function updateTime() {
     const now = new Date();
