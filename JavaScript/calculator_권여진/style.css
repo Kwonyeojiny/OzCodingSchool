@@ -5,20 +5,7 @@
 	box-sizing: border-box;
 	font-family: 'W95FA', sans-serif;   
 	
-	-webkit-user-select:none;
-	-moz-user-select:none;
-	-ms-user-select:none;
-	user-select:none
-}
-
-/* HTML과 Body의 기본 설정 */
-html, body {
-	height: calc(100%-66px);
-	background-color: rgb(17, 129, 129);
-}
-
-/* Img 선택 및 드래그 금지 */
-img {
+	/* 드래그 금지 */
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
@@ -28,6 +15,12 @@ img {
 	-khtml-user-drag: none;
 	-moz-user-drag: none;
 	-o-user-drag: none;
+}
+
+/* HTML과 Body의 기본 설정 */
+html, body {
+	height: calc(100%-66px);
+	background-color: rgb(17, 129, 129);
 }
 
 /* flex */

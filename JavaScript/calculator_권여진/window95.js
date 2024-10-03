@@ -14,7 +14,7 @@ icon.addEventListener('mousedown', (e) => {
 
     // 마우스 버튼을 떼면 이벤트 제거
     document.addEventListener('mouseup', () => {
-        icon.style.cursor = 'grab';
+        icon.style.cursor = 'pointer';
         document.removeEventListener('mousemove', moveIcon);
     }, { once: true });
 });
