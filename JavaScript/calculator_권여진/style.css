@@ -10,11 +10,7 @@
 /* HTML과 Body의 기본 설정 */
 html, body {
 	height: 100%;
-	display: flex;
-	flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+	margin: 16px;
 	background-color: rgb(17, 129, 129);
 }
 
@@ -111,6 +107,8 @@ html, body {
 	background-color: rgba(195, 195, 195, 1);
 
 	position: absolute;
+	left: 30%;
+	top: 15%;
 }
 
 /* 계산기 display button 부분 */
@@ -200,6 +198,26 @@ html, body {
 	grid-column: 1 / span 2;
 }
 
+/* 바탕화면 icon */
+.icon{
+	width: 72px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	cursor: pointer;
+}
+
+.icon_img{
+	
+}
+
+.icon_text{
+	color: white;
+}
+
 
 /* 윈도우 바닥 메뉴부분 */
 .footer_menu{
@@ -262,12 +280,12 @@ html, body {
 }
 
 .footer_time > img{
-	margin-right: 8px;
+	margin-right: 12px;
 }
 
 .footer_time_text{
 	margin: auto 0;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 }
 
 .footer_items {
@@ -277,4 +295,24 @@ html, body {
 .footer_item {
 	width: 260px;
 	height: 50px;
+
+	border: 2px solid rgba(240, 240, 240, 1);
+	border-left: 4px ridge rgba(126, 126, 126, 1);
+	border-top: 4px ridge rgba(126, 126, 126, 1);
+	background-color: rgba(227, 227, 227, 1);
+	padding: 8px;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.footer_item > img{
+	width: 36px;
+	margin-right: 8px;
+}
+
+.footer_item_text{
+	font-size: 1.5rem;
+	padding-top: 2px;
 }
