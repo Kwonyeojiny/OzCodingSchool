@@ -1,4 +1,6 @@
 const icon = document.querySelector('.icon');
+const container = document.querySelector('.calculator-container');
+const footer_cal = document.querySelector('.footer_cal');
 
 let offsetX, offsetY;
 
@@ -99,9 +101,20 @@ function updateTime() {
 
     document.querySelector('.footer_time_text').textContent = formattedTime; // 텍스트 업데이트
 }
-
 // 1초마다 시간 업데이트
 setInterval(updateTime, 1000);
-
 // 페이지 로드 시 초기 시간 설정
 updateTime();
+
+//아이콘 더블클릭시 계산기 나타나기
+icon.addEventListener('dblclick',()=>{
+    container.style.display = 'block';
+    footer_cal.style.display = 'flex';
+})
+// 계산기 x버튼 눌리면 계산기 사라져
+document.querySelector('.close_btn').addEventListener('click',()=>{
+    container.style.display = 'none';
+    footer_cal.style.display = 'none';
+    currentInput = '0'
+    display.textContent ='0'
+})
