@@ -1,0 +1,21 @@
+{
+  "name": "npm_parctice",
+  "version": "1.0.0",
+  "description": "npm 공부하기 라는 문자열을 console로 표시하는 패키지",
+  "main": "two.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node two.js"
+  },
+  "keywords": [
+    "npm",
+    "javascript",
+    "node"
+  ],
+  "author": "yeojin kangagi0009@naver.com",
+  "license": "ISC / MIT",
+  "dependencies": {
+    "dayjs": "^1.11.13"
+  }
+}
