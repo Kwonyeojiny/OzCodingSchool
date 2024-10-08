@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "npm 공부하기 라는 문자열을 console로 표시하는 패키지",
   "main": "two.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node two.js"
@@ -16,6 +15,7 @@
   "author": "yeojin kangagi0009@naver.com",
   "license": "ISC / MIT",
   "dependencies": {
+    "cowsay": "^1.6.0",
     "dayjs": "^1.11.13"
   }
 }
