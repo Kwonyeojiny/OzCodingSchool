@@ -110,7 +110,7 @@ const fruits = [
   {name: "레몬", color: "노랑", 크기: 3},
   {name: "체리", color: "빨강", 크기: 2},
   {name: "수박", color: "초록" , 크기: 8}
-]
+] 
 
 function App(){
   return(
