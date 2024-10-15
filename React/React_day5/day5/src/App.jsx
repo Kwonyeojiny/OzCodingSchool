@@ -2,27 +2,73 @@ import { useState } from 'react'
 
 import './App.css'
 
-function App() {
-  const [number, setNumber] = useState(0)
-  const [array, setArray] = useState([])
-  const [i,setI] = useState(0)
-  console.log('rerendering')
+// TODO
+// Create, Read, Update, Delete
 
-  const handler = () =>{
-    setNumber(number + 1)
-    //const newArray = array.slice()
-    const newArray = [...array]
-    setI(i+1)
-    newArray.push(i+1)
-    setArray(newArray)
-  }
+function App() {
+  const [todoList,setTodoList] = useState([
+    {id: 0, content:'밥 먹기'},
+    {id: 1, content:'리액트 공부하기'},
+    {id: 2, content:'잠자기'}
+  ])
 
   return (
     <>
-      <div>number : {number}</div>
-      <div>array : [{array.join(',')}]</div>
-      <button onClick={handler}>상태 업데이트!</button>
+      <TodoList todoList={todoList} setTodoList={setTodoList}/>
+      <hr/>
+      <TodoInput todoList={todoList} setTodoList={setTodoList}/>
     </>
+  )
+}
+
+function TodoInput({todoList, setTodoList}) {
+  const [inputValue, setInputValue] = useState('')
+  return (
+    <>
+      <input value={inputValue} onChange={(e)=> setInputValue(e.target.value)}/>
+      <button onClick={()=>{
+        const newTodo = {id: Number(new Date()), content:inputValue};
+        const newTodoList = [...todoList, newTodo];
+        setTodoList(newTodoList)
+        setInputValue('')
+      }}>추가하기</button>
+    </>
+  )
+}
+
+function TodoList({todoList, setTodoList}) {
+  return (
+    <>
+      <ul>
+          {todoList.map((todo)=>(
+            <Todo key={todo.id} todo={todo} setTodoList={setTodoList}/>
+          ))}
+      </ul>
+    </>
+  )
+}
+
+function Todo ({todo, setTodoList}) {
+  const [inputValue, setInputValue] = useState('')
+  return (
+    <li >
+      {todo.content}
+
+      <input value={inputValue} onChange={(e)=> setInputValue(e.target.value)}/>
+      <button onClick={()=>{
+        setTodoList((prev) =>
+          prev.map((el)=> el.id === todo.id ? {...el, content:inputValue} : el)
+        )
+      }}
+      >수정</button>
+
+      <button onClick={()=>{
+        setTodoList(prev =>{
+          return prev.filter(el => el.id !== todo.id)
+        })
+      }}
+      >삭제</button>
+    </li>
   )
 }
 
