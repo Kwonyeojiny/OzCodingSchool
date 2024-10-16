@@ -1,56 +1,53 @@
 import { useState } from 'react'
 import './App.css'
+import { Link, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
-function App() {
-  const [mood, setMood] = useState('Normal')
+function App () {
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  console.log(location)
+  console.log(location.pathname)
+  console.log(location.search)
+
   return (
     <>
-      <Face3 mood={mood}/>
-      <div className={mood === "Happy" ? 'happy' :
-        mood === "Normal" ? 'normal' : 'sad'
-      }>기분 : {mood}</div>
       <div>
-        <button onClick={()=> setMood("Happy")}>Happy</button>
-        <button onClick={()=> setMood("Normal")}>Normal</button>
-        <button onClick={()=> setMood("Sad")}>Sad</button>
+        {/* <Link to="/main">메인</Link>
+        <Link to="/mypage">마이페이지</Link>
+        <Link to="/test">테스트</Link> */}
+        <div>
+          <button onClick={()=>navigate('/main')}>메인</button>
+          <button onClick={()=>navigate('/mypage')}>마이페이지</button>
+          <button onClick={()=>navigate('/test')}>테스트</button>
+        </div>
+        <div>
+          <button onClick={()=>navigate(-1)}>{`<- 뒤로가기`}</button>
+          <button onClick={()=>navigate(1)}>{`앞으로가기 ->`}</button>
+        </div>
       </div>
+      <Routes>
+        <Route path="/main" element={<Main />} />
+        <Route path="/mypage" element={<div>마이 페이지</div>} />
+        <Route path="/test" element={<div>테스트 페이지</div>} />
+      </Routes>
     </>
   )
 }
 
-// 1. if문으로 리턴하는 JSX문 바꿔주기
-function Face({mood}) {
-  if(mood === 'Happy'){
-    return ("😊")
-  }
-  else if (mood === "Normal") {
-    return ("😐")
-  }
-  else {
-    return ("😭")
-  }
-}
+function Main() {
+  const params = useParams()
+  console.log(params.name)
 
-// 2. 삼항연산자 사용하기
-function Face2({mood}) {
-  return (
-    <>
-      {mood === "Happy" ? 
-        (<p>😊</p>) : mood === "Normal" ? 
-        (<div>😐</div>) : (<div>😭</div>)}
-    </>
-  )
-}
+  const location = useLocation()
+  console.log(location.search)
 
-// 3. 논리 연산자
-function Face3 ({mood}) {
-  return (
-    <>
-      {mood === "Happy" && <div>😊</div>}
-      {mood === "Normal" && <div>😐</div>}
-      {mood === "Sad" && <div>😭</div>}
-    </>
-  )
+  const [searchParams, setSearchParams] = useSearchParams()
+  console.log(searchParams.get("name"))
+  console.log(searchParams.get("school"))
+
+
+  return <div>메인 페이지</div>
 }
 
 export default App
