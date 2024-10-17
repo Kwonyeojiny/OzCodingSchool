@@ -1,69 +1,71 @@
-import { useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 
 function App() {
 
-  return (
-    <>
+  const {count,increment,decrement} = useCounter(0)
 
-      <ControlledInput/>
-      <br/><br/>
-      <UseRefInput/>
-      <br/><hr/><br/>
-      <Counter/>
-    </>
+ const {loading :loading1, data : data1} = useFetch('http://localhost:3000/data')
+ const {loading :loading2, data : data2} = useFetch('http://localhost:3001/data')
+ const {loading :loading3, data : data3} = useFetch('http://localhost:3002/data')
+
+  return (
+    <div>
+      <div>count : {count}</div>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+      {!loading1 && (
+        <ul>
+          {data1.map(el => <li key={'data1' + el.id}>{el.content}</li>)}
+        </ul>
+      )}
+      {!loading2 && (
+        <ul>
+          {data2.map(el => <li key={'data2' + el.id}>{el.content}</li>)}
+        </ul>
+      )}
+      {!loading3 && (
+        <ul>
+          {data3.map(el => <li key={'data3' + el.id}>{el.content}</li>)}
+        </ul>
+      )}
+    </div>
   )
+}
+
+const useFetch = (url) => {
+  const [loading, setLoading] = useState(true)
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(()=>{
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {
+        setData(res)
+        setLoading(false)
+      })
+      .catch((err)=> {
+        setError(err)
+        setLoading(false)
+      })
+  }, [url])
+  return {loading, data, error}
+}
+
+// counter custom Hook
+const useCounter = (initiaValue = 0, step = 1) => {
+  const [count,setCount] = useState(initiaValue)
+
+  const increment = () => setCount((prev)=> prev + step);
+  const decrement = () => setCount((prev)=> prev - step)
+
+  return {count, increment, decrement}
 }
 
 export default App;
 
-
-const Counter = () => {
-  const [counter, setCounter] = useState(0)
-  const numberRef = useRef(null)
-
-  return (
-    <>
-      <div>counter : {counter}</div>
-      <button onClick={()=> setCounter(prev => prev+1)} >+</button>
-      <button onClick={()=> setCounter(prev => prev-1)} >-</button>
-      <br/><br/>
-      <button onClick={()=> numberRef.current = counter} >Keep Value</button>
-      <button onClick={()=>console.log(numberRef.current)} >Show Value</button>
-    </>
-  )
-}
-
-
-const UseRefInput = () => {
-  const inputRef = useRef(null)
-  const getInputValue = () => {
-    console.log(inputRef.current.value) // == document.querySelector('input').value
-  }
-
-  const focusInput = () => {
-    inputRef.current.focus()
-  }
-
-  return (
-    <>
-      <input ref={inputRef}/> <br/>
-      <button onClick={getInputValue} >input 값 가져오기</button> 
-      <br/><br/>
-      <button onClick={focusInput}>focus</button>
-    </>
-  )
-}
-
-const ControlledInput = () => {
-  const [inputValue, setInputValue] = useState('')
-
-  console.log('ControlledInput')
-
-  return (
-    <input 
-      value={inputValue} 
-      onChange={(e)=> setInputValue(e.target.value)}
-    />
-  )
-}
+// npm i -g json-server
+// json-server --port 3000 db.json
+// json-server --port 3001 db1.json
+// json-server --port 3002 db2.json
