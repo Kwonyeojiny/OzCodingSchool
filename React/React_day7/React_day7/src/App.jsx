@@ -1,56 +1,28 @@
 
-import { Component, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
+// 생명 주기 함수
+// 서버에서 데이터 받아올 때
 function App () {
-  const[showCounter,setShowCounter] = useState(false);
-  return (
-    <>
-      {showCounter && <Counter/>}
-      <br/>
-      <button onClick={()=> setShowCounter((prev)=> !prev)}>show?</button>
-    </>
-  )
-}
+  const [data, setData] = useState([])
 
-function Counter (){
-  const [counter,setCounter] = useState(1)
-  const [counter2,setCounter2] = useState(100)
-
-  // 1. 컴포넌트가 최초로 렌더링 될 때만 조작
-  useEffect(() => {
-    console.log('맨 처음 렌더링 될 때')
-  },[])
-
-  // 2. 컴포넌트가 리렌더링 할 때 조작
-  useEffect(() => {
-    console.log('리렌더링...')
-  })
-
-  // 3. 특정 상태값이 변할 때만 조작
-  useEffect(() => {
-    console.log('counter의 값이 변할 때')
-  },[counter])
-
-  useEffect(() => {
-    console.log('counter2의 값이 변할 때')
-  },[counter2])
-
-  // 4. 컴포넌트가 최종적으로 언마운트 될 때 조작
-  useEffect(() => {
-    return () => {
-      console.log('컴포넌트 언마운트')
-    }
+  useEffect(()=> {
+    fetch("http://localhost:3000/data")
+      .then((res) => res.json())
+      .then((res) => setData(res))
   },[])
 
   return (
     <>
-      <div>counter : {counter}</div>
-      <button onClick={()=> setCounter(counter+1)}>+1</button>
-      <div>counter2 : {counter2}</div>
-      <button onClick={()=> setCounter2(counter2-1)}>-1</button>
+      <div>데이터 목록</div>
+      {data.map(el => <div key={el.id}>{el.content}</div>)}
     </>
   )
 }
+
 
 export default App
+
+// npm i -g json-server
+// json-server --watch db.json
