@@ -25,7 +25,7 @@ function App () {
   )
 }
 
-// 이벤트 핸들러 사용할 때
+// 이벤트 핸들러 사용할 때 
 const MouseFollower = () => {
   const[position,setPosition] = useState({x:0, y:0})
 
