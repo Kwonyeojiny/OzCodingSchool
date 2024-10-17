@@ -87,7 +87,7 @@ const ScrollIndicator = () => {
   )
 }
 
-// 타이머 함수 사용할 때
+// 타이머 함수 사용할 때 
 const AlertTime = () => {
   const [showAlert, setShowAlert] = useState(true)
 
