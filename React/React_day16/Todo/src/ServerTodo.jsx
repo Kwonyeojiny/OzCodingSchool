@@ -55,7 +55,7 @@ export default function ServerTodo() {
     </>
   );
 }
-
+// id, content 원시 데이터로 Props
 const List = memo(({ id, content, updateTodo, deleteTodo }) => {
   const [inputValue, setInputValue] = useState("");
 
