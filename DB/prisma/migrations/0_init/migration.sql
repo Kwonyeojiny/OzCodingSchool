@@ -113,11 +113,11 @@ CREATE TABLE "film_category" (
 -- CreateTable
 CREATE TABLE "film_comment" (
     "comment_id" SERIAL NOT NULL,
-    "post_id" INTEGER,
-    "customer_id" INTEGER,
-    "content" TEXT,
-    "created_at" TIMESTAMP(6),
-    "updated_at" TIMESTAMP(6),
+    "post_id" INTEGER NOT NULL,
+    "customer_id" INTEGER NOT NULL,
+    "content" TEXT NOT NULL,
+    "created_at" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(6) NOT NULL,
 
     CONSTRAINT "film_comment_pkey" PRIMARY KEY ("comment_id")
 );
@@ -125,10 +125,10 @@ CREATE TABLE "film_comment" (
 -- CreateTable
 CREATE TABLE "film_post" (
     "post_id" SERIAL NOT NULL,
-    "film_id" INTEGER,
-    "content" TEXT,
-    "created_at" TIMESTAMP(6),
-    "updated_at" TIMESTAMP(6),
+    "film_id" INTEGER NOT NULL,
+    "content" TEXT NOT NULL,
+    "created_at" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(6) NOT NULL,
 
     CONSTRAINT "film_post_pkey" PRIMARY KEY ("post_id")
 );
@@ -155,9 +155,9 @@ CREATE TABLE "language" (
 -- CreateTable
 CREATE TABLE "mention" (
     "mention_id" SERIAL NOT NULL,
-    "created_at" TIMESTAMP(6),
-    "comment_id" INTEGER,
-    "mentioned_customer_id" INTEGER,
+    "created_at" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "comment_id" INTEGER NOT NULL,
+    "mentioned_customer_id" INTEGER NOT NULL,
 
     CONSTRAINT "mention_pkey" PRIMARY KEY ("mention_id")
 );
@@ -165,12 +165,12 @@ CREATE TABLE "mention" (
 -- CreateTable
 CREATE TABLE "notification" (
     "notification_id" SERIAL NOT NULL,
-    "mentioner_id" INTEGER,
-    "mention_id" INTEGER,
-    "content" TEXT,
-    "created_at" TIMESTAMP(6),
-    "is_read" BOOLEAN,
-    "read_at" TIMESTAMP(6),
+    "mentioner_id" INTEGER NOT NULL,
+    "mention_id" INTEGER NOT NULL,
+    "content" TEXT NOT NULL,
+    "created_at" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "is_read" BOOLEAN NOT NULL,
+    "read_at" TIMESTAMP(6) NOT NULL,
 
     CONSTRAINT "notification_pkey" PRIMARY KEY ("notification_id")
 );
@@ -190,10 +190,10 @@ CREATE TABLE "payment" (
 -- CreateTable
 CREATE TABLE "post_reaction" (
     "reaction_id" SERIAL NOT NULL,
-    "reaction_type" "reaction_type",
-    "post_id" INTEGER,
-    "customer_id" INTEGER,
-    "created_at" TIMESTAMP(6),
+    "reaction_type" "reaction_type" NOT NULL,
+    "post_id" INTEGER NOT NULL,
+    "customer_id" INTEGER NOT NULL,
+    "created_at" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "post_reaction_pkey" PRIMARY KEY ("reaction_id")
 );
